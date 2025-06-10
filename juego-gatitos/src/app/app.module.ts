@@ -9,6 +9,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { ToolsSectionComponent } from './components/tools-section/tools-section.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutComponent } from './components/about/about.component';
     FeaturesComponent,
     GalleryComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    ToolsSectionComponent
   ],
   imports: [
     BrowserModule,
