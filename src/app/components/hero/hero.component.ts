@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-
+  scrollToTrailer(): void {
+    const section = document.getElementById('trailerSection');
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  }
 }

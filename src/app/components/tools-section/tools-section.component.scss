@@ -1,0 +1,32 @@
+:host {
+  /* Animación para la aparición de detalles */
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Efecto hover para las tarjetas */
+  .tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilo para las listas */
+  ul {
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+  }
+
+  /* Responsividad adicional */
+  @media (max-width: 768px) {
+    .tool-card {
+      padding: 1.5rem;
+    }
+  }
+}

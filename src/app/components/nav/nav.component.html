@@ -1,0 +1,35 @@
+<nav class="navbar">
+   <ul class="nav-list">
+    <li class="nav-item"><a routerLink="/">Inicio</a></li>
+    <li class="nav-item"><a routerLink="/historia">Historia</a></li>
+  </ul>
+
+  <style>
+    .navbar {
+      background-color: #333;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item a:hover {
+      color: #ff7e5f;
+    }
+  </style>
+</nav>

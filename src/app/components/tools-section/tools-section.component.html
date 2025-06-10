@@ -1,0 +1,53 @@
+<section class="py-16 px-4 bg-gradient-to-b from-orange-50 to-amber-50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-800">
+      <span class="inline-block mr-3">🛠️</span> Herramientas Utilizadas
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let tool of tools" 
+           class="p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl border-2 {{tool.colorClass}}">
+        
+        <!-- Logo y encabezado -->
+        <div class="flex flex-col items-center mb-4">
+          <img [src]="tool.logoUrl" [alt]="tool.name + ' logo'" 
+               class="h-20 object-contain mb-4 transition-transform duration-300 hover:scale-110">
+          <h3 class="text-2xl font-bold text-center">{{tool.name}}</h3>
+          <a [href]="tool.officialUrl" target="_blank" 
+             class="text-sm text-gray-600 hover:text-blue-600 mt-1">
+            Sitio oficial
+          </a>
+        </div>
+        
+        <p class="text-gray-700 mb-4 text-center">{{tool.description}}</p>
+        
+        <!-- Botón para mostrar/ocultar detalles -->
+        <button (click)="toggleDetails(tool.name)" 
+                class="w-full py-2 px-4 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-70 transition mb-4">
+          {{isExpanded[tool.name] ? 'Menos detalles' : 'Más detalles'}}
+        </button>
+        
+        <!-- Detalles expandibles -->
+        <div *ngIf="isExpanded[tool.name]" class="space-y-4 animate-fadeIn">
+          <div>
+            <h4 class="font-semibold text-lg mb-2">🔧 Cómo lo usamos:</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li *ngFor="let detail of tool.usageDetails">{{detail}}</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-2">💡 Por qué elegimos {{tool.name}}:</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li *ngFor="let reason of tool.reasons">{{reason}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-12 text-center text-gray-600">
+      <p class="text-lg">Estas herramientas profesionales nos permitieron crear una experiencia de juego única y de alta calidad</p>
+    </div>
+  </div>
+</section>

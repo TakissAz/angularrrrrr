@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historia - Sección</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-orange-50 via-white to-orange-50 min-h-screen flex items-center justify-center p-6">
+
+  <section id="historia" class="max-w-4xl bg-white shadow-lg rounded-lg p-8 space-y-6">
+    <h2 class="text-4xl font-bold text-orange-700 border-b-4 border-orange-300 pb-2 mb-6 text-center">
+      La Aventura de Noah y Jacobita
+    </h2>
+
+    <p class="text-gray-800 text-lg leading-relaxed fade-in" style="animation-delay: 0.2s;">
+      Noah era una gata doméstica que vivía felizmente en una casa llena de cariño y comodidad. Pero, un día, en una de sus exploraciones por las calles de La Paz, algo extraño sucedió. La multitud de la feria de la 16 de Julio era ruidosa y bulliciosa, y Noah, guiada por su curiosidad, comenzó a adentrarse entre los puestos. Un descuido, y pronto, se encontró perdida entre la multitud. 
+    </p>
+
+    <p class="text-gray-800 text-lg leading-relaxed fade-in" style="animation-delay: 0.4s;">
+      En otro rincón de la ciudad, Jacobita, una gata andina de mirada sabia y corazón indomable, se encontraba atrapada en un puesto. La intentaban vender junto a otros animales, sin un hogar que la esperara. Jacobita, con su pelaje gris y ojos llenos de historia, no era como las otras mascotas. Ella había crecido entre montañas y senderos, pero la vida en la ciudad la había dejado vulnerable. Sin embargo, su espíritu no se dejaba dominar. 
+    </p>
+
+    <p class="text-gray-800 text-lg leading-relaxed fade-in" style="animation-delay: 0.6s;">
+      En el momento más inesperado, el destino unió sus caminos. Noah, perdida y aterrada, de repente vio a Jacobita en ese mismo puesto. La mirada de Jacobita era fuerte, pero Noah pudo ver una chispa de esperanza en sus ojos. Sin pensarlo dos veces, Noah se acercó, tocó con suavidad la pata de Jacobita y le susurró al oído: "No estás sola, yo te ayudaré".
+    </p>
+
+    <button id="toggleMore" class="mt-4 px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-300">
+      Mostrar más
+    </button>
+
+    <div id="moreContent" class="hidden text-gray-800 text-lg leading-relaxed mt-4 space-y-4">
+      <p>
+        Noah, con su instinto valiente, ideó un plan. Usó su agilidad para escabullirse entre la multitud, mientras Jacobita la seguía, confiando en su nuevo amigo. Juntas, atravesaron los puestos de comida, las montañas de ropa, y finalmente llegaron a un rincón tranquilo donde pudieron escapar. Desde entonces, las dos se convirtieron en inseparables. 
+      </p>
+      <p>
+        Noah enseñó a Jacobita a disfrutar de la vida en la ciudad: a saltar entre los tenderos de ropa, a explorar los mercados sin miedo, y a encontrar esos pequeños rincones llenos de paz. Pero Jacobita, con su sabiduría ancestral, también le mostró a Noah lo que significaba ser libre, vivir sin ataduras y siempre buscar el bien en los demás. 
+      </p>
+      <p>
+        Juntas, no solo exploraban, sino que también comenzaron una misión muy especial: rescatar a los animales atrapados en los puestos de las ferias. Mientras Noah saltaba ágilmente por los tenderos, Jacobita se encargaba de guiar a los animales hacia la libertad. No importaba lo difícil que fuera, no importaba los obstáculos. Su amistad era el mayor poder de todas.
+      </p>
+      <p>
+        Así, entre saltos, risas y muchas aventuras, Noah y Jacobita demostraron que, incluso en los momentos más oscuros, siempre hay una oportunidad para encontrar luz, amistad y un hogar para todos los que lo necesiten.
+      </p>
+    </div>
+  </section>
+
+  <script type="module">
+    const toggleBtn = document.getElementById('toggleMore');
+    const moreContent = document.getElementById('moreContent');
+
+    toggleBtn.addEventListener('click', () => {
+      if (moreContent.classList.contains('hidden')) {
+        moreContent.classList.remove('hidden');
+        toggleBtn.textContent = 'Mostrar menos';
+      } else {
+        moreContent.classList.add('hidden');
+        toggleBtn.textContent = 'Mostrar más';
+      }
+    });
+  </script>
+
+  <style>
+    /* Estilos extra para animaciones */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</body>
+</html>

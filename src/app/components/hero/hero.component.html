@@ -1,7 +1,36 @@
-<section class="bg-gradient-to-r from-[#fff1e6] to-[#ffe5ec] py-20 text-center">
-  <div class="animate-fade-up transition-all duration-700">
-    <h1 class="text-6xl font-bold text-[#2e2e2e] mb-4">🐾 Catventure</h1>
-    <p class="text-xl text-[#2e2e2e] mb-6">¡Embárcate en una aventura gatuna como nunca antes!</p>
-    <button class="bg-[#f4a261] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#f6bd60] transition">Jugar ahora</button>
+<section class="relative text-center py-24 px-6 bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 overflow-hidden z-10">
+  <div class="absolute inset-0 bg-black opacity-20"></div>
+  <div class="relative z-10">
+    <div class="mb-4">
+      <div class="bg-white bg-opacity-20 px-6 py-3 rounded-full text-lg font-bold text-white backdrop-blur-sm inline-block">
+        🎮 Llauchas Studio
+      </div>
+    </div>
+    <h1 class="text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-2xl float-animation">
+      Mishis de la Yapa
+    </h1>
+    <p class="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto font-semibold drop-shadow-lg">
+      🏠 Acompaña a dos valientes gatitos en su misión de rescatar a otros <span class="animate-pulse">abandonados</span>.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <button
+        id="trailerBtn"
+        (click)="scrollToTrailer()"
+        class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-110 glow-button text-lg shadow-2xl">
+        🎬 Ver Trailer del Juego
+      </button>
+      <button
+        id="demoBtn"
+        class="bg-gradient-to-r from-amber-600 to-orange-500 hover:from-amber-700 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-110 text-lg shadow-2xl">
+        🎮 Descargar Demo
+      </button>
+    </div>
+  </div>
+
+  <!-- Animated waves -->
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+    <svg class="relative block w-full h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="white"></path>
+    </svg>
   </div>
 </section>

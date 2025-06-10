@@ -1,0 +1,29 @@
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.paw-print::before {
+  content: '🐾';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  animation: paw-bounce 2s ease-in-out infinite;
+}
+
+.countdown-number {
+  background: linear-gradient(135deg, #ff8c00, #d2691e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes paw-bounce {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
