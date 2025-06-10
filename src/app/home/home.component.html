@@ -1,4 +1,3 @@
-<p>home works!</p>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,19 +13,19 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
-        
+
         @keyframes glow {
             0%, 100% { box-shadow: 0 0 20px rgba(255, 140, 0, 0.4); }
             50% { box-shadow: 0 0 40px rgba(255, 140, 0, 0.7); }
         }
-        
+
         @keyframes calico-colors {
             0% { filter: hue-rotate(0deg); }
             33% { filter: hue-rotate(15deg); }
             66% { filter: hue-rotate(-15deg); }
             100% { filter: hue-rotate(0deg); }
         }
-        
+
         @keyframes paw-bounce {
             0%, 100% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.2) rotate(10deg); }
@@ -36,15 +35,15 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.3); }
         }
-        
+
         .float-animation {
             animation: float 3s ease-in-out infinite;
         }
-        
+
         .glow-button {
             animation: glow 2s ease-in-out infinite;
         }
-        
+
         .calico-text {
             background: linear-gradient(45deg, #ff8c00, #000000, #ffffff, #d2691e, #ff8c00);
             background-size: 300% 300%;
@@ -52,13 +51,13 @@
             -webkit-text-fill-color: transparent;
             animation: calico-colors 4s ease infinite;
         }
-        
+
         .glass-effect {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .paw-print::before {
             content: '🐾';
             position: absolute;
@@ -145,7 +144,7 @@
     </style>
 </head>
 <body class="font-[Fredoka] text-gray-800 bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 min-h-screen overflow-x-hidden">
-    
+
     <!-- Floating Elements Background -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div class="absolute top-10 left-10 text-4xl floating-cat animate-bounce delay-1000">🐱</div>
@@ -169,11 +168,15 @@
                 Mishis de la Yapa 🐱
             </h1>
             <p class="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto font-semibold drop-shadow-lg">
-                🏠 Acompaña a dos valientes gatitos en su misión de rescatar a otros animate-pulse abandonados. 
-                
+                🏠 Acompaña a dos valientes gatitos en su misión de rescatar a otros animate-pulse abandonados.
+
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button id="trailerBtn" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-110 glow-button text-lg shadow-2xl">
+                <button
+                  id="trailerBtn"
+                  onclick="document.getElementById('trailerSection').scrollIntoView({ behavior: 'smooth' });"
+                  class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-110 glow-button text-lg shadow-2xl"
+                >
                     🎬 Ver Trailer del Juego
                 </button>
                 <button id="demoBtn" class="bg-gradient-to-r from-amber-600 to-orange-500 hover:from-amber-700 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-110 text-lg shadow-2xl">
@@ -181,7 +184,7 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Animated waves -->
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
             <svg class="relative block w-full h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -189,29 +192,6 @@
             </svg>
         </div>
     </section>
-    
-
-<section class="py-20 px-6 bg-white relative z-10">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8 text-orange-800">🎬 Mira el Trailer Oficial</h2>
-    
-    <div class="video-container shadow-2xl" id="videoContainer">
-      <iframe class="w-full aspect-video rounded-2xl"
-              src="https://youtu.be/0j0ZzTB6jDw?si=OuQ-ITavO5UbpyuK" 
-              title="Trailer del juego" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-      </iframe>
-    </div>
-    
-    <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
-      Descubre la historia de Noah y Jacobita, dos gatitos héroes en su misión de rescatar a otros.
-    </p>
-  </div>
-</section>
-
-
 
 
     <!-- Cuenta Regresiva -->
@@ -220,10 +200,35 @@
             <h2 class="text-4xl font-bold mb-8 text-orange-700">
                 🚀 Lanzamiento Oficial en:
             </h2>
+            <h1 class="text-6xl md:text-7xl font-bold mb-4 text-orange-800 countdown-number">
+                <span id="countdownDays">7</span> días
+            </h1>
             <div id="countdown" class="text-5xl md:text-6xl font-bold countdown-number mb-4"></div>
             <p class="mt-4 text-gray-700 font-semibold">¡La aventura felina más esperada! 🏠</p>
         </div>
     </section>
+
+    <!-- trailer -->
+    <section class="py-20 px-6 bg-white relative z-10" id="trailerSection">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8 text-orange-800">🎬 Mira el Trailer Oficial</h2>
+
+        <div class="video-container shadow-2xl" id="videoContainer">
+          <iframe class="w-full aspect-video rounded-2xl"
+                  src="https://youtube.com/embed/0j0ZzTB6jDw?si=OuQ-ITavO5UbpyuK"
+                  title="Trailer del juego"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+          Descubre la historia de Noah y Jacobita, dos gatitos héroes en su misión de rescatar a otros.
+        </p>
+      </div>
+    </section>
+
 
     <!-- Sobre el Juego -->
     <section class="py-20 px-6 max-w-5xl mx-auto text-center relative z-10">
@@ -236,7 +241,7 @@
         <div class="glass-effect rounded-3xl p-8 shadow-2xl bg-white bg-opacity-60">
             <p class="text-xl text-gray-700 leading-relaxed mb-8">
                 Un juego de aventura protagonizado por dos valientes gatitos que se dedican a rescatar a otros.
-                
+
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-gradient-to-br from-orange-100 to-amber-100 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border-2 border-orange-200">
@@ -256,8 +261,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
     </section>
 
 
@@ -276,7 +281,7 @@
                         </div>
                         <h3 class="text-3xl font-bold text-orange-700 mb-4">Noah 🧡</h3>
                         <p class="text-lg text-gray-700 leading-relaxed">
-                            Un gato naranja valiente y decidido que nunca se rinde ante un rescate difícil. Noah tiene una habilidad especial 
+                            Un gato naranja valiente y decidido que nunca se rinde ante un rescate difícil. Noah tiene una habilidad especial
                             para encontrar gatitos perdidos y ganarse su confianza. Su gran corazón lo convierte en el líder perfecto de las misiones de rescate. 🦸‍♂️
                         </p>
                         <div class="mt-4 flex justify-center space-x-2">
@@ -285,7 +290,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Jacobita -->
                 <div class="text-center">
                     <div class="bg-gradient-to-br from-amber-200 to-orange-200 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform interactive-cat">
@@ -297,22 +302,22 @@
                            Jacobita es una gatita de monte andino, sabia y cariñosa. Le encanta cuidar a los más chiquitos y ayudarlos a encontrar un hogar donde ronronear felices.
                         </p>
                         <div class="mt-4 flex justify-center space-x-2">
-                            
+
                             <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm">🤗 Empática</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Historia de los personajes -->
 
-            
+
         </div>
     </section>
- 
-    
 
-   
+
+
+
 
     <!-- Newsletter Section -->
     <section class="py-20 px-6 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-white text-center relative overflow-hidden z-10">
@@ -322,7 +327,7 @@
             <p class="text-xl mb-8 opacity-90">¡Únete y recibe noticias sobre el desarrollo, actualizaciones del juego y conoce más sobre las aventuras de Noah y Jacobita!</p>
             <div class="newsletter-form rounded-2xl p-6 mb-6">
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-                    <input type="email" id="newsletterEmail" placeholder="tu.email@rescate.com" 
+                    <input type="email" id="newsletterEmail" placeholder="tu.email@rescate.com"
                            class="glass-effect text-white placeholder-gray-300 border-0 p-4 rounded-full shadow-lg flex-1 text-center font-semibold">
                     <button id="subscribeBtn" class="bg-gradient-to-r from-white to-gray-100 text-orange-600 font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-110 shadow-2xl hover:shadow-orange-300/50">
                         🚀 ¡Unirme al Rescate!
@@ -330,7 +335,7 @@
                 </div>
             </div>
             <div class="p-4">
-  <button 
+  <button
     routerLink="/destacados"
     class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-2xl shadow-md transition-all">
     Ver Noticias Destacadas
@@ -340,9 +345,9 @@
             <p class="text-sm opacity-75">💝 Solo noticias importantes sobre el juego y el rescate felino</p>
         </div>
     </section>
-    
-      
-    
+
+
+
 
     <!-- Equipo de Desarrollo -->
     <section class="py-20 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white px-6 relative z-10">
@@ -350,11 +355,11 @@
             <div class="mb-8">
                 <h2 class="text-5xl font-bold mb-4">🎮 Llauchas Studio</h2>
                 <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                    Un estudio independiente dedicado a crear experiencias de juego que no solo entretengan, 
+                    Un estudio independiente dedicado a crear experiencias de juego que no solo entretengan,
                     sino que también generen conciencia sobre el cuidado y rescate animal.
                 </p>
             </div>
-            
+
             <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-8 mb-12 glass-effect">
                 <div class="text-8xl mb-4">🎯</div>
                 <h3 class="text-2xl font-bold mb-3">Nuestra Misión</h3>
